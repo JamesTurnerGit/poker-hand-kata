@@ -69,7 +69,7 @@ public class PokerHand
 
     private bool RoyalFlush()
     {
-        return (StraightFlush() && cards[0].Value == (Values.Ace));
+        return StraightFlush() && cards[0].Value == Values.Ace;
     }
 
     private bool StraightFlush()
@@ -80,7 +80,7 @@ public class PokerHand
     private bool Flush()
     {
         return cards.GroupBy(card => card.Suit).Any(group => group.Count() == 5);
-    }
+    } 
 
     private bool FourOfAKind()
     {
