@@ -33,7 +33,7 @@ public class PokerHand
 
     private void TypeAndSort()
     {
-        cards = sort(cards);
+        cards = SortCards(cards);
         if (RoyalFlush())    { Type = PokerHandType.RoyalFlush;    return; }
         if (StraightFlush()) { Type = PokerHandType.StraightFlush; return; }
         if (FourOfAKind())   { Type = PokerHandType.FourOfAKind;   return; }
@@ -46,7 +46,7 @@ public class PokerHand
         Type = PokerHandType.HighCard;
     }
 
-    private List<Card> sort(List<Card> cards)
+    private List<Card> SortCards(List<Card> cards)
     {
         return cards.OrderByDescending(card => card.Value)
                     .GroupBy(card => card.Value)
