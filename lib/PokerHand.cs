@@ -61,7 +61,8 @@ public class PokerHand
         for (int i = 0; i < 4; i++)
         {
             bool result = (cards[i].Value - 1) == cards[i + 1].Value;
-            if (i == 0 && cards[0].Value == Values.Ace && cards[1].Value == Values.Five) { result = true; } // makes sure to consider Ace low in the right circumstance
+            //if it's the first card in a hand, and that card is an ace, it should be checked as a low card instead of high
+            if (i == 0 && cards[0].Value == Values.Ace && cards[1].Value == Values.Five) { result = true; } 
             if (!result) { return false; }
         }
         return true;
