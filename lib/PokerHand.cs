@@ -48,12 +48,11 @@ public class PokerHand
 
     private List<Card> sort(List<Card> cards)
     {
-        var sorted = cards.OrderByDescending(card => card.Value)
-                          .GroupBy(card => card.Value)
-                          .OrderByDescending(group => group.Count())
-                          .SelectMany(group => group.OrderByDescending(card => card.Value))
-                          .ToList();
-        return sorted;
+        return cards.OrderByDescending(card => card.Value)
+                    .GroupBy(card => card.Value)
+                    .OrderByDescending(group => group.Count())
+                    .SelectMany(group => group.OrderByDescending(card => card.Value))
+                    .ToList();
     }
 
     private bool Straight()
