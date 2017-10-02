@@ -49,11 +49,10 @@ public class PokerHand
     private List<Card> sort(List<Card> cards)
     {
         cards.Sort((card1, card2) => card2.Value.CompareTo(card1.Value));
-        var sorted = cards
-                .GroupBy(c => c.Value)
-                .OrderByDescending(g => g.Count())
-                .SelectMany(g => g.OrderByDescending(c => c.Value))
-                .ToList();
+        var sorted = cards.GroupBy(card => card.Value)
+                          .OrderByDescending(group => group.Count())
+                          .SelectMany(group => group.OrderByDescending(card => card.Value))
+                          .ToList();
         return sorted;
     }
 
