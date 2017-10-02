@@ -34,15 +34,15 @@ public class PokerHand
     private void TypeAndSort()
     {
         cards = sort(cards);
-        if (RoyalFlush()) { Type = PokerHandType.RoyalFlush; return; }
+        if (RoyalFlush())    { Type = PokerHandType.RoyalFlush;    return; }
         if (StraightFlush()) { Type = PokerHandType.StraightFlush; return; }
-        if (FourOfAKind()) { Type = PokerHandType.FourOfAKind; return; }
-        if (FullHouse()) { Type = PokerHandType.FullHouse; return; }
-        if (Flush()) { Type = PokerHandType.Flush; return; }
-        if (Straight()) { Type = PokerHandType.Straight; return; }
-        if (ThreeOfAKind()) { Type = PokerHandType.ThreeOfAKind; return; }
-        if (TwoPair()) { Type = PokerHandType.TwoPair; return; }
-        if (Pair()) { Type = PokerHandType.Pair; return; }
+        if (FourOfAKind())   { Type = PokerHandType.FourOfAKind;   return; }
+        if (FullHouse())     { Type = PokerHandType.FullHouse;     return; }
+        if (Flush())         { Type = PokerHandType.Flush;         return; }
+        if (Straight())      { Type = PokerHandType.Straight;      return; }
+        if (ThreeOfAKind())  { Type = PokerHandType.ThreeOfAKind;  return; }
+        if (TwoPair())       { Type = PokerHandType.TwoPair;       return; }
+        if (Pair())          { Type = PokerHandType.Pair;          return; }
         Type = PokerHandType.HighCard;
     }
 
