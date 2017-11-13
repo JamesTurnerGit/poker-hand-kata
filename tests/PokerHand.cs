@@ -21,7 +21,7 @@ public class PokerTests
     [TestCase("Pair wins of nothing", Result.Loss, "2S AH 4H 5S KC", "AH AC 5H 6H 7S")]
     [TestCase("Highest card loses", Result.Loss, "2S 3H 6H 7S 9C", "7H 3C TH 6H 9S")]
     [TestCase("Highest card wins", Result.Win, "4S 5H 6H TS AC", "3S 5H 6H TS AC")]
-    [TestCase("Equal cards is tie",	Result.Tie, "2S AH 4H 5S 6C", "AD 4C 5H 6H 2C")]
+    [TestCase("Equal cards is tie", Result.Tie, "2S AH 4H 5S 6C", "AD 4C 5H 6H 2C")]
     [TestCase("only checks kickers for tiebreaks", Result.Loss, "3S 3H 4H 5S 6C", "2D 2C AH KH QC")]
     [TestCase("straight wrapsaround with aces",	Result.Win, "AS 2H 3H 4S 5C", "2D 2C AH KH QC")]    
     public void PokerHandTest(string description, Result expected, string hand, string opponentHand)
